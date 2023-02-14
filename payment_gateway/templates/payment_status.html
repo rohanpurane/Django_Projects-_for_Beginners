@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}<title>Coffee Payment</title>{% endblock title %}
+
+
+{% block content %}
+<div class="container">
+    {% if status %}
+        <div class="container justify-content-center">
+            <h1 class="text-white">Payment Done Successfully</h1>
+        </div>
+    {% else %}
+    <div class="container justify-content-center">
+        <h1 class="text-white">Payment Failed...!</h1>
+    </div>
+    {% endif %}
+    <a class="container justify-content-center btn btn-danger" href="{% url 'home' %}">Home</a>
+</div>
+    
+{% endblock content %}

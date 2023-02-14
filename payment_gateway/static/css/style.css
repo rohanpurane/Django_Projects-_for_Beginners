@@ -1,0 +1,12 @@
+.jumbo-color{
+    background-color: rgb(175, 164, 164);
+}
+
+.border{
+    border-radius: 5%;
+}
+
+.img{
+    width: 100px;
+    height: 200px;
+}
