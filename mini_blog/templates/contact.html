@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}<title>Contact</title>{% endblock title %}
+{% block content %}
+
+<div class="col-sm-10">
+    <br>
+    <h1 class="text-white">Contact Page</h1>
+    <br>
+    <div class="jumbotron jumbotron-fluid text-white">
+        <div class="container">
+            <br><br>
+            <form>
+                <p>If want to share your review</p>
+        
+                <div class="form-outline mb-4">
+                  <input type="email" id="form2Example11" class="form-control"
+                    placeholder="Phone number or email address" />
+                  <label class="form-label" for="form2Example11">Email</label>
+                </div>
+        
+                <div class="form-outline mb-4">
+                  <input type="text" id="form2Example22" class="form-control" />
+                  <label class="form-label" for="form2Example22">Message</label>
+                </div>
+        
+                <div class="text-center pt-1 mb-5 pb-1">
+                  <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="button">Send</button>
+                </div>
+              </form>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}<title>Update</title>{% endblock title %}
+
+
+{% block msg %}
+    {% if messages %}
+        {% for message in messages %}
+            <p {% if message.tag %} class="alert alert-{{message.tags}} my-5" {% endif %}>{{message}}</p>
+        {% endfor %}
+    {% endif %}
+{% endblock msg %}
+
+
+{% block content %}
+
+<div class="col-sm-10">
+    <br>
+    <h1 class="text-warning">Update Post</h1>
+    <br>
+    <div class="form-group text-white">
+        <form action="" method="post" novalidate>{% csrf_token %}
+            {% for fm in form %}
+                {{fm.label_tag}} {{fm}} <small class="text-bg-warning">{{fm.errors|striptags}}</small>
+            {% endfor %}
+            <br>
+                <input class="btn btn-success btn-block fa-lg gradient-custom-2 mb-3" type="submit" value="Update">
+                <a href="{% url 'dashboard' %}" class="btn btn-danger btn-block fa-lg gradient-custom-2 mb-3">Cancle</a>
+
+            {% if form.non_field_errors %}
+                {% for error in form.non_field_errors %}
+                    <p class="alert alert-danger">{{error}}</p>
+                {% endfor %}
+            {% endif %}
+        </form>
+    </div>
+    
+</div>
+{% endblock content %}
