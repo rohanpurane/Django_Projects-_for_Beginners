@@ -1,0 +1,63 @@
+{% extends 'frontview/base.html' %}
+{% load static %}
+{% block title %}<title>Contact Us</title>{% endblock title %}
+
+
+{% block bg_img %}<body id="bg" style="background-image: url('{% static "frontview/img/wall/contact_wall.jpg" %}');">
+    {% include 'frontview/navbar.html' %}
+    
+
+    
+    {% block content %}
+        <div class="container">
+            <br>
+            <div class="row align-items-center justify-content-center">
+                <div class="col-sm-4 ">
+                    <h2 class="text-white text-center">Contact Me</h2>
+                    <form action="" method="post">{% csrf_token %}
+                        {% for fm in form %}
+                            <div class="form-group mb-3">
+                                {{fm.label_tags}} {{fm}} <small class='text-danger'>{{fm.errors|striptags}}</small>
+                            </div>
+                        {% endfor %}
+                        <p class="text-white">{{cap}}</p>
+                        <button type="submit" class="btn btn-primary py-3 w-100 mb-4">Send</button>
+                        {% if form.non_field_errors %}
+                            {% for error in form.non_field_errors %}
+                                <p class="alert alert-danger my-3">{{error}}</p>
+                            {% endfor %}
+                        {% endif %}
+                    </form>
+                </div> <br>
+                {% comment %} <div class="col-sm-6 offset-2">
+                    <img src="{% static 'frontview/img/map.jpg' %}" alt="" class="map">
+                </div> {% endcomment %}
+            </div>
+        </div>
+        <div class="container">
+            <div class="row align-items-center justify-content-center">
+                <div class='col-2 img'>
+                    <img src="{% static 'frontview/img/logo/call_l.png' %}" alt="">
+                    <p class="text-white logo">+91 8788522771</p>
+                </div>
+                <div class='col-2 img'>
+                    <a href="https://github.com/login"><img src="{% static 'frontview/img/logo/github_l.png' %}" alt="noopener noreferrer" target="_blank"></a>
+                </div><div class='col-2 img'>
+                    <img src="{% static 'frontview/img/logo/gmail_l.png' %}" alt="">
+                    <p class="text-white logo">rohan.jobrelated@gmail.com</p>
+                </div>
+                <div class='col-2 img'>
+                    <a href="https://in.linkedin.com/"><img src="{% static 'frontview/img/logo/linkedin_l.png' %}" alt=""></a>
+                </div>
+                <div class='col-2 img'>
+                    <img src="{% static 'frontview/img/logo/map_l.png' %}" alt="">
+                    <p class="text-white">Wagholi, Pune, 412207.</p>
+                </div>
+                
+            </div>
+        </div>
+    {% endblock content %}
+
+
+{% include 'frontview/js_path.html' %}
+</body>{% endblock bg_img %}

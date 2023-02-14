@@ -1,0 +1,28 @@
+{% extends 'frontview/base.html' %}
+{% load static %}
+{% block title %}<title>Home</title>{% endblock title %}
+
+
+{% block bg_img %}<body id="bg" style="background-image: url('{% static "frontview/img/wall/wallpaper.jpg" %}');">
+    {% include 'frontview/navbar.html' %}
+    
+    {% block content %}
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="margin">
+                        <h1 class="text-white">Web Developer</h1><br>
+                        <p class="text-white">Find out which posts are a hit with Blogger’s built-in analytics.<br> 
+                            You’ll see where your audience is coming from and what they’re interested in.<br> 
+                            You can even connect your blog directly to Google Analytics for a more detailed look.
+                        </p><br>
+                        <button class="btn btn-info"><a href="#">Resume</a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endblock content %}
+
+    
+    {% include 'frontview/js_path.html' %}
+</body>{% endblock bg_img %}

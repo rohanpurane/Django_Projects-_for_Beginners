@@ -1,0 +1,33 @@
+{% extends 'frontview/base.html' %}
+{% load static %}
+{% block title %}<title>About Us</title>{% endblock title %}
+
+
+{% block bg_img %}<body id="bg" style="background-image: url('{% static "frontview/img/wall/aboutme_wallpaper2.jpg" %}');">
+    {% include 'frontview/navbar.html' %}
+    
+    
+    
+    {% block content %}
+    <div>
+        <div class="container">
+            <div class="row">
+                {% for d in data %}
+                <div class="col-10 offset-1"><br>
+                    <img src="{{d.about_img.url}}" alt="" class="rounded-circle center">
+                    <br>
+                    <div class="jumbotron  text-center text-white">
+                        <h1 class="display-4">{{d.title}}</h1>
+                        <p class="lead">{{d.description}}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+        
+    {% endblock content %}
+
+
+{% include 'frontview/js_path.html' %}
+</body>{% endblock bg_img %}

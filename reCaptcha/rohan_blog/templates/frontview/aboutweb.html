@@ -1,0 +1,18 @@
+{% extends 'frontview/base.html' %}
+{% load static %}
+{% block title %}<title>About Web</title>{% endblock title %}
+
+
+{% block bg_img %}<body class="bg_color">
+    {% include 'frontview/navbar.html' %}
+    
+
+    
+    {% block content %}
+        <h1>About This Web Site</h1>
+
+    {% endblock content %}
+
+
+{% include 'frontview/js_path.html' %}
+</body>{% endblock bg_img %}
